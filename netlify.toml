@@ -1,0 +1,6 @@
+# Static site: no build step, publish the repo root.
+# Netlify Forms picks up the "holiday-party-registration" form in index.html
+# (Site configuration > Forms > form detection must be enabled).
+[build]
+  publish = "."
+  command = ""
