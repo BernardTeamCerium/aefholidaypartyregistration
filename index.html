@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | Preppy Holiday Party | Allied Elite Financial</title>
+  <meta name="description" content="Register yourself and your guest for the Allied Elite Financial '80s Preppy Holiday Party.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/aef-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <!-- Falling snow layer -->
+  <div class="snow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="nav__brand" href="#top" aria-label="Allied Elite Financial home">
+      <img src="assets/aef-mark.png" alt="">
+      <span class="nav__name">Allied Elite Financial<small>Holiday Party</small></span>
+    </a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav id="nav-links" class="nav__links">
+      <a href="#details">Details</a>
+      <a href="#dress-code">Dress Code</a>
+      <a href="#policy">Policy</a>
+      <a class="btn btn--small" href="#register">Register</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero hero--short">
+      <div class="hero__inner">
+        <img class="hero__logo" src="assets/aef-logo.png" alt="Allied Elite Financial, an AmeriLife company">
+        <p class="hero__kicker">presents</p>
+        <h1 class="hero__title">
+          <span class="hero__script">Totally</span>
+          <span class="hero__big">Preppy</span>
+          <span class="hero__small">Holiday Party</span>
+        </h1>
+        <p class="hero__sub">An &rsquo;80s Country Club Soir&eacute;e <span class="sparkle">✦</span> Guest Registration</p>
+        <p class="hero__meta">
+          <span data-field="dateLong">Date TBA</span> &middot; <span data-field="timeRange">Time TBA</span> &middot; <span data-field="venueName">Venue TBA</span>
+        </p>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><span id="cd-days">--</span><small>Days</small></div>
+          <div><span id="cd-hours">--</span><small>Hours</small></div>
+          <div><span id="cd-mins">--</span><small>Mins</small></div>
+          <div><span id="cd-secs">--</span><small>Secs</small></div>
+        </div>
+        <p class="hero__deadline" data-rsvp>Please register by <strong data-field="rsvpDeadline"></strong></p>
+        <div class="hero__ctas">
+          <a class="btn" href="#register">Register Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Pop your collar ✦ Bring your plus-one ✦ Navy &amp; seafoam, please ✦ Sweater over the shoulders ✦ See you at CORBETT&rsquo;S ✦ Pickleball, anyone? ✦ Register today ✦ </span>
+        <span>Pop your collar ✦ Bring your plus-one ✦ Navy &amp; seafoam, please ✦ Sweater over the shoulders ✦ See you at CORBETT&rsquo;S ✦ Pickleball, anyone? ✦ Register today ✦ </span>
+      </div>
+    </div>
+
+    <!-- REGISTRATION -->
+    <section id="register" class="section">
+      <h2 class="section__title"><small>Sign the guest book</small><span>Registration</span></h2>
+      <p class="section__lead">Reserve your place at the club. Register yourself below and, if you're bringing a plus-one, add your guest's details too. One guest per registered attendee.</p>
+
+      <form action="/" class="form form--narrow reg" id="reg-form" method="POST" name="holiday-party-registration" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="holiday-party-registration">
+        <input type="hidden" name="party-size" id="party-size" value="1">
+        <p class="form__hp" aria-hidden="true"><label>Leave this empty<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+        <fieldset class="reg__group">
+          <legend><span class="reg__step">1</span> About You</legend>
+          <div class="form__row">
+            <label>First Name<input name="first-name" required autocomplete="given-name"></label>
+            <label>Last Name<input name="last-name" required autocomplete="family-name"></label>
+          </div>
+          <div class="form__row">
+            <label>Email<input type="email" name="email" required autocomplete="email"></label>
+            <label>Phone Number<input type="tel" name="phone" required autocomplete="tel"></label>
+          </div>
+          <div class="form__row">
+            <label>I am attending as
+              <select name="affiliation" required>
+                <option value="">Select one</option>
+                <option value="AEF Staff">AEF Staff</option>
+                <option value="Partner">Partner</option>
+                <option value="Approved Affiliate">Approved Affiliate</option>
+                <option value="Sponsor">Sponsor</option>
+              </select>
+            </label>
+            <label><span>Agency / Company <span class="opt">(optional)</span></span><input name="company" autocomplete="organization"></label>
+          </div>
+          <label><span>Dietary Restrictions or Allergies <span class="opt">(optional)</span></span><input name="dietary" placeholder="e.g. vegetarian, gluten-free, nut allergy"></label>
+        </fieldset>
+
+        <fieldset class="reg__group">
+          <legend><span class="reg__step">2</span> Your Guest</legend>
+          <p class="reg__q" id="guest-q">Will you be bringing a guest?</p>
+          <div class="choice" role="radiogroup" aria-labelledby="guest-q">
+            <label class="choice__opt"><input type="radio" name="bringing-guest" value="Yes" required><span>Yes, I'm bringing a plus-one</span></label>
+            <label class="choice__opt"><input type="radio" name="bringing-guest" value="No"><span>No, just me</span></label>
+          </div>
+
+          <div class="reg__guest" id="guest-fields" hidden>
+            <div class="form__row">
+              <label>Guest First Name<input name="guest-first-name" autocomplete="off" data-guest-required></label>
+              <label>Guest Last Name<input name="guest-last-name" autocomplete="off" data-guest-required></label>
+            </div>
+            <div class="form__row">
+              <label><span>Guest Email <span class="opt">(optional)</span></span><input type="email" name="guest-email" autocomplete="off"></label>
+              <label><span>Relationship <span class="opt">(optional)</span></span>
+                <select name="guest-relationship">
+                  <option value="">Select one</option>
+                  <option value="Spouse / Partner">Spouse / Partner</option>
+                  <option value="Family Member">Family Member</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Colleague">Colleague</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+            <label><span>Guest Dietary Restrictions or Allergies <span class="opt">(optional)</span></span><input name="guest-dietary"></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="reg__group">
+          <legend><span class="reg__step">3</span> At the Club</legend>
+          <p class="reg__q" id="pb-q">CORBETT'S has pickleball courts. Up for a friendly match?</p>
+          <div class="choice" role="radiogroup" aria-labelledby="pb-q">
+            <label class="choice__opt"><input type="radio" name="pickleball" value="Count me in"><span>Count me in</span></label>
+            <label class="choice__opt"><input type="radio" name="pickleball" value="Spectating"><span>I'll spectate in style</span></label>
+          </div>
+          <label><span>Accessibility Needs or Notes for the Events Team <span class="opt">(optional)</span></span><textarea name="notes" rows="3"></textarea></label>
+          <label class="check">
+            <input type="checkbox" name="policy-acknowledged" value="Yes" required>
+            <span>I understand this event is by invitation only for AEF staff, partners and approved affiliates, and I'm responsible for my guest.</span>
+          </label>
+        </fieldset>
+
+        <button class="btn" type="submit">Complete Registration</button>
+        <p class="form__status" id="reg-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- Confirmation (replaces the form after a successful submit) -->
+      <div class="form form--narrow reg-done" id="reg-done" hidden tabindex="-1">
+        <p class="modal__kicker">Welcome to the club</p>
+        <h3 class="reg-done__title">You're on the list!</h3>
+        <p id="reg-done-summary"></p>
+        <ul class="reg-done__details">
+          <li><strong>When:</strong> <span data-field="dateLong"></span>, <span data-field="timeRange"></span></li>
+          <li><strong>Where:</strong> <span data-field="venueName"></span>, <span data-field="venueAddress"></span></li>
+        </ul>
+        <div class="reg-done__actions">
+          <button class="btn" type="button" id="add-cal">Add to Calendar</button>
+          <a class="btn btn--alt" data-href="venueMapUrl" href="#" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+        <p class="modal__note">Need to make a change? Email <a data-field-href="contactEmail" data-field="contactEmail" href="#"></a>.</p>
+      </div>
+    </section>
+
+    <!-- DETAILS -->
+    <section id="details" class="section">
+      <h2 class="section__title"><small>You're cordially invited</small><span>The Invitation</span></h2>
+      <p class="section__lead">Pop your collar and dust off the boat shoes. Allied Elite Financial is heading to the club for a most excellent &rsquo;80s preppy holiday celebration with our team, partners and affiliates.</p>
+      <div class="cards cards--3">
+        <article class="card">
+          <div class="card__icon">📅</div>
+          <h3>When</h3>
+          <p data-field="dateLong">Date TBA</p>
+          <p data-field="timeRange">Time TBA</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">📍</div>
+          <h3>Where</h3>
+          <p data-field="venueName">Venue TBA</p>
+          <p data-field="venueAddress">Address TBA</p>
+          <p class="card__note" data-field="venueBlurb"></p>
+          <p class="card__links"><a data-href="venueMapUrl" href="#" target="_blank" rel="noopener">Get directions</a> &middot; <a data-href="venueUrl" href="#" target="_blank" rel="noopener">Venue website</a></p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🎟️</div>
+          <h3>Who</h3>
+          <p>AEF staff, partners &amp; approved affiliates</p>
+          <p>Plus one guest each</p>
+          <p class="card__note">By invitation only</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DRESS CODE -->
+    <section id="dress-code" class="section">
+      <h2 class="section__title"><small>Strictly enforced (sort of)</small><span>Dress Code</span></h2>
+      <div class="dress">
+        <div class="dress__text">
+          <p class="dress__headline">&rsquo;80s country club chic meets holiday sparkle</p>
+          <p>Think <em>The Official Preppy Handbook</em> by way of a holiday cocktail party: crisp, colorful and just a little bit extra. Navy and seafoam? Required. Plaid? It's the holidays, so absolutely. Your guest is welcome (and encouraged) to dress the part too.</p>
+          <ul class="ticks">
+            <li>Popped polo collars &amp; sweaters tied over the shoulders</li>
+            <li>Argyle, madras, gingham &amp; holiday tartan</li>
+            <li>Blazers with crests, cable knits &amp; velvet</li>
+            <li>Pearls, headbands, loafers &amp; boat shoes</li>
+          </ul>
+          <p class="dress__award">🏆 Best-dressed awards for <strong>Most Preppy</strong> &amp; <strong>Best Holiday Plaid</strong></p>
+        </div>
+        <div class="swatches" aria-hidden="true">
+          <div class="swatch swatch--argyle"><span>Argyle</span></div>
+          <div class="swatch swatch--madras"><span>Madras</span></div>
+          <div class="swatch swatch--stripe"><span>Seersucker</span></div>
+          <div class="swatch swatch--tartan"><span>Holiday Tartan</span></div>
+        </div>
+      </div>
+      <div class="cta-band">
+        <h3>Reserve your tee time!</h3>
+        <p>Interested in sponsoring the party? See the club membership packages on the <a class="cta-band__link" data-href="sponsorSiteUrl" href="#" target="_blank" rel="noopener">sponsorship page</a>.</p>
+      </div>
+    </section>
+
+    <!-- POLICY -->
+    <section id="policy" class="section section--policy">
+      <h2 class="section__title"><small>The fine print</small><span>Attendance Policy</span></h2>
+      <div class="policy">
+        <p>This registration page is intended for internal use only by AEF staff, partners, and approved affiliates. The event is not open to the public.</p>
+        <h3>Invitations &amp; Guests</h3>
+        <p>Attendance is by invitation only. Each registered attendee may bring one guest, and attendees are responsible for their guest's conduct at the event. Registrations from individuals outside of authorized internal channels will not be accepted.</p>
+        <h3>Use of Information</h3>
+        <p>Information submitted on this form is used solely to plan and coordinate the Allied Elite Financial Holiday Party (headcount, catering and check-in) and will not be shared outside of authorized internal channels.</p>
+        <h3>Changes</h3>
+        <p>AEF reserves the right to modify, cancel, or restrict attendance at any time without notice. If your plans change, please let the events team know as soon as possible.</p>
+        <h3>Confidentiality Notice</h3>
+        <p>This page and all associated materials are confidential and proprietary. If you are not an authorized participant and have accessed this page in error, please exit immediately and notify the event administrator.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/aef-logo-white.png" alt="Allied Elite Financial, an AmeriLife company" class="footer__logo">
+    <p>Questions? Email <a data-field-href="contactEmail" data-field="contactEmail" href="#">events@example.com</a></p>
+    <p class="footer__small">&copy; <span data-field="year">2026</span> AEF. All rights reserved. Internal use only.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

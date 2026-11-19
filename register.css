@@ -1,0 +1,56 @@
+/* Registration-specific styles, layered on the shared styles.css from the sponsorship site. */
+
+.hero--short { min-height: auto; padding-block: 3rem; }
+.hero__deadline { margin: 1.25rem 0 0; font-weight: 600; }
+
+.reg { gap: 1.75rem; }
+.reg__group { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.reg__group + .reg__group { padding-top: 1.5rem; border-top: 2px dashed #d3dbe6; }
+.reg__group legend {
+  display: flex; align-items: center; gap: .6rem; padding: 0; margin-bottom: 1rem;
+  font-family: var(--serif); font-style: italic; font-weight: 900; font-size: 1.5rem; color: var(--navy);
+}
+.reg__step {
+  display: inline-grid; place-items: center; width: 2rem; height: 2rem; flex: none;
+  font-family: "Poppins", sans-serif; font-style: normal; font-size: .95rem; font-weight: 700;
+  background: var(--brand-grad); color: var(--navy);
+  border: 2px solid var(--navy); border-radius: 50%;
+}
+.reg__q { margin: 0; font-weight: 600; }
+.reg__guest { display: flex; flex-direction: column; gap: 1rem; padding: 1.25rem; background: var(--aqua-soft); border-left: 5px solid var(--aqua); border-radius: 6px; }
+.reg__guest[hidden] { display: none; }
+.form .opt { font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--gray); }
+
+/* Pill radio choices */
+.choice { display: flex; flex-wrap: wrap; gap: .75rem; }
+.form .choice__opt { flex-direction: row; cursor: pointer; text-transform: none; letter-spacing: 0; font-size: .95rem; }
+.choice__opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.choice__opt span {
+  display: inline-block; padding: .6rem 1.1rem;
+  border: 2px solid var(--navy); border-radius: 999px; background: var(--paper);
+  font-weight: 600; transition: background .15s, box-shadow .15s;
+}
+.choice__opt:hover span { box-shadow: 0 3px 0 var(--aqua); }
+.choice__opt input:checked + span { background: var(--brand-grad); box-shadow: 0 3px 0 var(--navy); }
+.choice__opt input:focus-visible + span { outline: 3px solid rgba(29,211,252,.6); outline-offset: 2px; }
+
+/* Checkbox */
+.form .check { flex-direction: row; align-items: flex-start; gap: .7rem; text-transform: none; letter-spacing: 0; font-weight: 600; font-size: .92rem; cursor: pointer; }
+.form .check input { width: 1.2rem; height: 1.2rem; margin-top: .2rem; flex: none; accent-color: var(--blue); padding: 0; }
+
+/* Validation */
+.form .is-invalid, .choice.is-invalid span { border-color: #b42318; }
+.field-error { color: #b42318; font-size: .8rem; font-weight: 600; text-transform: none; letter-spacing: 0; }
+
+/* Confirmation */
+.reg-done { text-align: center; align-items: center; }
+.reg-done[hidden] { display: none; }
+.reg-done:focus { outline: none; }
+.reg-done__title { font-family: var(--serif); font-weight: 900; font-size: clamp(1.9rem, 5vw, 2.4rem); margin: 0; color: var(--navy); }
+.reg-done__details { list-style: none; padding: 0; margin: 0; }
+.reg-done__details li { margin: .3rem 0; }
+.reg-done__actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.form.reg-done .btn { align-self: auto; margin-top: 0; }
+
+.cta-band a.cta-band__link { color: var(--cyan); }
+.form .check.is-invalid input { outline: 2px solid #b42318; outline-offset: 2px; }
